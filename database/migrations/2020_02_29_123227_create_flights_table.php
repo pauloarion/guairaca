@@ -15,6 +15,16 @@ class CreateFlightsTable extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('from_id')->index();
+            $table->unsignedBigInteger('to_id')->index();
+            $table->foreign('from_id')->references('id')->on('airports');
+            $table->foreign('to_id')->references('id')->on('airports');
+            $table->string('name');
+            $table->tinyInteger('active');
+            $table->time('time');
+            $table->enum('airline',['american_airlines','latam','gol','azul','tap'])->default('latam');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by'); 
             $table->timestamps();
         });
     }
