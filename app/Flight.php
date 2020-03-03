@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\TracksCreatorAndUpdater;
 
 class Flight extends Model
 {
+    use TracksCreatorAndUpdater;
+
     public function persons()
     {
         return $this->belongsToMany('App\Passenger','booking')
