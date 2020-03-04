@@ -1,12 +1,12 @@
 @extends('layouts.site')
 
-@section('titulo','Cursos')
+@section('site_title','Adicionar Passageiro')
 
 @section('content')
   <div class="container">
-    <h3 class="center">Adicionar Curso</h3>
+    <h3 class="center">Adicionar Passageiro</h3>
     <div class="row">
-      <form class="" action="{{route('admin.passengers.salvar')}}" method="post" enctype="multipart/form-data">
+      <form class="col s12" action="{{route('admin.passengers.salvar')}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         @include('admin.passengers._form')
         <button class="btn deep-orange">Salvar</button>
