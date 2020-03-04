@@ -31,8 +31,13 @@ class Passenger extends Model
         $this->attributes['birthday'] = Carbon::createFromFormat(config('app.date_format'), $value)->format(config('app.date_format_db'));
     }
 
-    public function getBirthdayAttribute($value)
+    public function getBirthdayAttribute()
     {
-        return Carbon::parse($value)->format(config('app.date_format'));
+        return Carbon::parse($this->attributes['birthday'])->format(config('app.date_format'));
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['birthday'])->age;
     }
 }

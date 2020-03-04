@@ -1,10 +1,11 @@
 @extends('layouts.site')
 
-@section('titulo','Cursos')
+@section('site_title','Editar Passageiro')
 
 @section('content')
+<div class="container">
+  <h3 class="center">Editar Passageiro</h3>
   <div class="container">
-    <h3 class="center">Editando Curso</h3>
     <div class="row">
       <form class="" action="{{route('admin.passengers.atualizar',$registro->id)}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -14,6 +15,7 @@
       </form>
     </div>
   </div>
+</div>
 
 
 @endsection

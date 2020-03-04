@@ -22,11 +22,12 @@
                 labelMonthSelect: 'Selecione um mês',
                 labelYearSelect: 'Selecione um ano',
                 selectMonths: true,
-                selectYears: 15,
+                selectYears: 100,
             },
             format: '{{ config('app.date_format_view') }}',
             container: 'body',
-            minDate: new Date(),
+            minDate: 0,
+            maxDate: new Date(),
             });
         });
     </script>
