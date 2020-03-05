@@ -42,4 +42,11 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/flights/editar/{id}',['as'=>'admin.flights.editar','uses'=>'Admin\FlightController@editar']);
     Route::put('/admin/flights/atualizar/{id}',['as'=>'admin.flights.atualizar','uses'=>'Admin\FlightController@atualizar']);
     Route::get('/admin/flights/deletar/{id}',['as'=>'admin.flights.deletar','uses'=>'Admin\FlightController@deletar']);
+
+    Route::get('/admin/bookings',['as'=>'admin.bookings','uses'=>'Admin\BookingController@index']);
+    Route::get('/admin/bookings/adicionar',['as'=>'admin.bookings.adicionar','uses'=>'Admin\BookingController@adicionar']);
+    Route::post('/admin/bookings/salvar',['as'=>'admin.bookings.salvar','uses'=>'Admin\BookingController@salvar']);
+    Route::get('/admin/bookings/editar/{id}',['as'=>'admin.bookings.editar','uses'=>'Admin\BookingController@editar']);
+    Route::put('/admin/bookings/atualizar/{id}',['as'=>'admin.bookings.atualizar','uses'=>'Admin\BookingController@atualizar']);
+    Route::get('/admin/bookings/deletar/{id}',['as'=>'admin.bookings.deletar','uses'=>'Admin\BookingController@deletar']);
 });

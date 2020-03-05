@@ -7,7 +7,7 @@
   <div class="input-field col s4">
     <select name="airline">
       @foreach($airlines as $line)
-      <option value="{{$line['key']}}" {{ $registro->airline == $line['key'] ? 'selected' : '' }}>{{$line['value']}}</option>
+      <option value="{{$line['key']}}" {{ !isset($registro->airline) ? '' : ($registro->airline == $line['key'] ? 'selected' : '') }}>{{$line['value']}}</option>
       @endforeach
     </select>
     <label>Companhia Aérea</label>
@@ -15,7 +15,7 @@
 
   <p>
     <label class="input-field col s4">
-      <input type="checkbox" name="active" value="1" {{ $registro->active ? 'checked="checked"' : '' }} />
+      <input type="checkbox" name="active" value="1" {{ !isset($registro->active) ? '' : ($registro->active ? 'checked="checked"' : '') }} />
       <span>Ativo</span>
     </label>
   </p>
@@ -42,7 +42,7 @@
   <div class="input-field col s4">
     <select name="from_id">
       @foreach($from_list as $from)
-      <option value="{{$from->id}}" {{ $registro->from_id == $from->id ? 'selected' : '' }}>{{$from->name}}</option>
+      <option value="{{$from->id}}" {{  !isset($registro->from_id) ? '' : ($registro->from_id == $from->id ? 'selected' : '') }}>{{$from->name}}</option>
       @endforeach
     </select>
     <label>Origem</label>
@@ -51,7 +51,7 @@
   <div class="input-field col s4">
     <select name="to_id">
       @foreach($to_list as $to)
-      <option value="{{$to->id}}" {{ $registro->to_id == $to->id ? 'selected' : '' }}>{{$to->name}}</option>
+      <option value="{{$to->id}}" {{  !isset($registro->to_id) ? '' : ($registro->to_id == $to->id ? 'selected' : '') }}>{{$to->name}}</option>
       @endforeach
     </select>
     <label>Destino</label>
