@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Passenger;
+use Carbon\Carbon as Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PassengerSeed extends Seeder
 {
@@ -12,11 +14,13 @@ class PassengerSeed extends Seeder
      */
     public function run()
     {
+        Auth::loginUsingId(1);
+
         $dados = [
             'name' => "Joaquim",
             'surname' => "Rocha",
             'cpf'=> "02514201514",
-            'birthday' => Carbon\Carbon::createFromDate(1982,9,10),
+            'birthday' => Carbon::createFromDate(1999,9,10)->format(config('app.date_format')),
             'email' => 'p@p.com',
             'phone' => '48999565852',
             'created_by' => 1,
@@ -36,7 +40,7 @@ class PassengerSeed extends Seeder
             'name' => "Marta",
             'surname' => "Carvalho",
             'cpf'=> "36261465029",
-            'birthday' => Carbon\Carbon::createFromDate(1982,9,10),
+            'birthday' => Carbon::createFromDate(1999,9,10)->format(config('app.date_format')),
             'email' => 'p@p.com',
             'phone' => '48999565852',
             'created_by' => 1,
@@ -56,7 +60,7 @@ class PassengerSeed extends Seeder
             'name' => "Paulo",
             'surname' => "Frota",
             'cpf'=> "52935036000",
-            'birthday' => Carbon\Carbon::createFromDate(1982,9,10),
+            'birthday' => Carbon::createFromDate(1999,9,10)->format(config('app.date_format')),
             'email' => 'p@p.com',
             'phone' => '48999565852',
             'created_by' => 1,
@@ -76,7 +80,7 @@ class PassengerSeed extends Seeder
             'name' => "Rafaela",
             'surname' => "Silva",
             'cpf'=> "86265985051",
-            'birthday' => Carbon\Carbon::createFromDate(1982,9,10),
+            'birthday' => Carbon::createFromDate(1999,9,10)->format(config('app.date_format')),
             'email' => 'p@p.com',
             'phone' => '48999565852',
             'created_by' => 1,
@@ -96,7 +100,7 @@ class PassengerSeed extends Seeder
             'name' => "Marina",
             'surname' => "Lira",
             'cpf'=> "77799194049",
-            'birthday' => Carbon\Carbon::createFromDate(1982,9,10),
+            'birthday' => Carbon::createFromDate(1999,9,10)->format(config('app.date_format')),
             'email' => 'p@p.com',
             'phone' => '48999565852',
             'created_by' => 1,

@@ -33,7 +33,13 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/airports/adicionar',['as'=>'admin.airports.adicionar','uses'=>'Admin\AirportController@adicionar']);
     Route::post('/admin/airports/salvar',['as'=>'admin.airports.salvar','uses'=>'Admin\AirportController@salvar']);
     Route::get('/admin/airports/editar/{id}',['as'=>'admin.airports.editar','uses'=>'Admin\AirportController@editar']);
-    //Se não quiser passar na url o id, pode passar dentro do formulário, como em um hidden field
     Route::put('/admin/airports/atualizar/{id}',['as'=>'admin.airports.atualizar','uses'=>'Admin\AirportController@atualizar']);
     Route::get('/admin/airports/deletar/{id}',['as'=>'admin.airports.deletar','uses'=>'Admin\AirportController@deletar']);
+
+    Route::get('/admin/flights',['as'=>'admin.flights','uses'=>'Admin\FlightController@index']);
+    Route::get('/admin/flights/adicionar',['as'=>'admin.flights.adicionar','uses'=>'Admin\FlightController@adicionar']);
+    Route::post('/admin/flights/salvar',['as'=>'admin.flights.salvar','uses'=>'Admin\FlightController@salvar']);
+    Route::get('/admin/flights/editar/{id}',['as'=>'admin.flights.editar','uses'=>'Admin\FlightController@editar']);
+    Route::put('/admin/flights/atualizar/{id}',['as'=>'admin.flights.atualizar','uses'=>'Admin\FlightController@atualizar']);
+    Route::get('/admin/flights/deletar/{id}',['as'=>'admin.flights.deletar','uses'=>'Admin\FlightController@deletar']);
 });
