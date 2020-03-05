@@ -25,6 +25,8 @@
                     @else
                     <li><a href="{{route('admin.passengers')}}">Passageiros</a></li>
                     <li><a href="{{route('admin.airports')}}">Aeroportos</a></li>
+                    <li><a href="{{route('admin.flights')}}">Voos</a></li>
+                    <li><a href="{{route('admin.bookings')}}">Reservas</a></li>
                     <li><a href="#">{{Auth::user()->name}}</a></li>
                     <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
                     @endif
@@ -39,6 +41,8 @@
             @else
             <li><a href="{{route('admin.passengers')}}">Passageiros</a></li>
             <li><a href="{{route('admin.airports')}}">Aeroportos</a></li>
+            <li><a href="{{route('admin.flights')}}">Voos</a></li>
+                    <li><a href="{{route('admin.bookings')}}">Reservas</a></li>
             <li><a href="#">{{Auth::user()->name}}</a></li>
             <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
             @endif
