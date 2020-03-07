@@ -12,7 +12,9 @@ class Passenger extends Model
 
     protected $fillable = [
         'cpf','surname','name','birthday','email','phone','created_by','updated_by'
-    ];    
+    ];
+
+    protected $appends = ['is_elderly'];
 
     public function flights()
     {
@@ -26,6 +28,19 @@ class Passenger extends Model
             ]);
     }
 
+    public function setNameAttribute($value) {
+        $this->attributes['name'] = strtoupper($value);
+    }
+
+    public function setSurnameAttribute($value) {
+            $this->attributes['surname'] = strtoupper($value);
+    }
+
+    public function getIsElderlyAttribute()
+    {
+        return Carbon::now()->floatDiffInYears($this->attributes['birthday']) > 60;
+    }
+    
     public function setBirthdayAttribute($value)
     {
         $this->attributes['birthday'] = Carbon::createFromFormat(config('app.date_format'), $value)->format(config('app.date_format_db'));
